@@ -12,16 +12,16 @@
 (require 'base-functions)
 (require 'base-global-keys)
 
-(require 'lang-python)
+;;(require 'lang-python)
 
-(require 'lang-php)
+;;(require 'lang-php)
 
-(require 'lang-javascript)
+;;(require 'lang-javascript)
 
-(require 'lang-web)
+;;(require 'lang-web)
 
-(require 'lang-haskell)
+;;(require 'lang-haskell)
 
-(require 'lang-rust)
+;;(require 'lang-rust)
 
 (require 'lang-c)
