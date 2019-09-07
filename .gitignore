@@ -1,0 +1,8 @@
+*~
+*.elc
+.custom.el
+ede-projects.el
+smex-items
+elpa/
+private/
+snippets/
