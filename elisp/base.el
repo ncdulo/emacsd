@@ -55,6 +55,7 @@
 (setq-default indent-tabs-mode nil
 	      tab-width 4)
 (delete-selection-mode)
+(setq kill-whole-line t)
 
 ;; Bookmarks
 (setq
