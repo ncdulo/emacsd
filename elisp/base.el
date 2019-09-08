@@ -60,6 +60,10 @@
 (setq kill-whole-line t)
 (global-auto-revert-mode)
 
+;; Update ibuffer when changes occur
+(add-hook 'ibuffer-mode-hook
+          '(lambda ()
+             (ibuffer-auto-mode 1)))
 (setq ibuffer-use-other-window t) ;; always display ibuffer in another window
 
 ;; Bookmarks
