@@ -56,6 +56,9 @@
 	      tab-width 4)
 (delete-selection-mode)
 (setq kill-whole-line t)
+(global-auto-revert-mode)
+
+(setq ibuffer-use-other-window t) ;; always display ibuffer in another window
 
 ;; Bookmarks
 (setq
