@@ -1,8 +1,14 @@
 (use-package org
   :config
-  (setq org-directory "~/org-files"
-        org-default-notes-file (concat org-directory "/todo.org"))
+  (setq org-directory "~/org"
+        org-default-notes-file (concat org-directory "/notes/notes.org")
+	org-agenda-files (list (concat org-directory "/gtd/inbox.org")
+			       (concat org-directory "/gtd/projects.org")
+			       (concat org-directory "/gtd/tasks.org")
+			       (concat org-directory "/gtd/tickler.org"))
+	)
   :bind
+  ("C-c c" . org-capture)
   ("C-c l" . org-store-link)
   ("C-c a" . org-agenda))
 
