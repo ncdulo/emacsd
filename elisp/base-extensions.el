@@ -56,6 +56,28 @@
   (setq ivy-use-virtual-buffers nil)
   (define-key read-expression-map (kbd "C-r") 'counsel-expression-history))
 
+(use-package golden-ratio
+  :config
+  (setq golden-ratio-exclude-modes '("ediff-mode"
+				     "dired-mode"
+                                     "gud-mode"
+                                     "gdb-locals-mode"
+                                     "gdb-registers-mode"
+                                     "gdb-breakpoints-mode"
+                                     "gdb-threads-mode"
+                                     "gdb-frames-mode"
+                                     "gdb-inferior-io-mode"
+                                     "gdb-disassembly-mode"
+                                     "gdb-memory-mode"
+                                     "magit-log-mode"
+                                     "magit-reflog-mode"
+                                     "magit-status-mode"
+                                     "IELM"
+                                     "eshell-mode"
+                                     "dired-mode"))
+  (golden-ratio-mode)
+
+  :ensure t)
 
 (use-package hlinum
   :config
@@ -68,9 +90,9 @@
 
 (use-package magit
   :config
-  
+
   (setq magit-completing-read-function 'ivy-completing-read)
-  
+
   :bind
   ;; Magic
   ("C-x g s" . magit-status)
@@ -104,9 +126,9 @@
   :config
   (setq projectile-known-projects-file
         (expand-file-name "projectile-bookmarks.eld" temp-dir))
-  
+
   (setq projectile-completion-system 'ivy)
-  
+
   (projectile-global-mode))
 
 (use-package recentf
