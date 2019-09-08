@@ -144,11 +144,7 @@
   (setq recentf-save-file (recentf-expand-file-name "~/.emacs.d/private/cache/recentf"))
   (recentf-mode 1))
 
-(use-package smartparens
-  :config
-  (smartparens-strict-mode nil)
-  (add-hook 'prog-mode-hook #'smartparens-mode)
-  (add-hook 'elisp-mode #'smartparens-mode))
+(use-package smartparens)
 
 (use-package smex)
 
