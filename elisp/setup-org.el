@@ -1,5 +1,8 @@
 (use-package org
   :config
+  ;; Enable autofill mode
+  (add-hook 'org-mode-hook 'turn-on-auto-fill)
+
   ;; Default directories and files
   (setq org-directory "~/org"
         org-default-notes-file (concat org-directory "/notes/notes.org")
