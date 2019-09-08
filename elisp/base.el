@@ -84,6 +84,12 @@
 
 (show-paren-mode 1)
 
+;; Save our session on exit and auto restore on start
+(desktop-save-mode 1)
+
+;; default window size
+(when window-system (set-frame-size (selected-frame) 90 40))
+
 ;; Delete trailing whitespace before save
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
 
