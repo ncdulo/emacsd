@@ -201,6 +201,14 @@
 
 (use-package magit-popup)
 
+;; Reference: https://github.com/jrblevin/markdown-mode
+(use-package markdown-mode
+  :commands (markdown-mode gfm-mode)
+  :mode (("README\\.md\\'" . gfm-mode)
+         ("\\.md\\'" . markdown-mode)
+         ("\\.markdown\\'" . markdown-mode))
+  :init (setq markdown-command "multimarkdown"))
+
 (use-package multiple-cursors
   :bind
   ("C-S-c C-S-c" . mc/edit-lines)
