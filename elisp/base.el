@@ -10,6 +10,9 @@
   (package-install 'use-package))
 (require 'use-package)
 
+(setq user-full-name "Nick Cardullo"
+      user-mail-address "nick.cardullo@gmail.com")
+
 (defconst private-dir  (expand-file-name "private" user-emacs-directory))
 (defconst temp-dir (format "%s/cache" private-dir)
   "Hostname-based elisp temp directories")
