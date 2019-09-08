@@ -27,3 +27,5 @@
 ;;(require 'lang-rust)
 
 (require 'lang-c)
+
+(require 'lang-perl)
