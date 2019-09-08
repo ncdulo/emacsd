@@ -22,7 +22,7 @@
 			     ("~/org/gtd/projects.org" :maxlevel . 3)
 			     ("~/org/gtd/tickler.org" :maxlevel . 2)))
 
-  (setq org-todo-keywords '((sequence "TODO(t)" "WAITING(w!/@)" "NEXT(n)" "|" "DONE(d!/@)" "CANCELED(c!/@")))
+  (setq org-todo-keywords '((sequence "TODO(t)" "WAITING(w!/@)" "NEXT(n)" "|" "DONE(d!)" "CANCELED(c!/@)")))
 
   ;; Custom agenda commands
   (setq org-agenda-custom-commands
