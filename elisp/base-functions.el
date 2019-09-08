@@ -47,6 +47,17 @@ PRIORITY may be one of the characters ?A, ?B, or ?C."
    (t (format "%10d" bytes)))
   )
 
+;; Wrap cursor around at beginning/end of ibuffer window
+(defun kuanyui/ibuffer-previous-line ()
+  (interactive) (previous-line)
+  (if (<= (line-number-at-pos) 2)
+      (goto-line (- (count-lines (point-min) (point-max)) 2))))
+
+(defun kuanyui/ibuffer-next-line ()
+  (interactive) (next-line)
+  (if (>= (line-number-at-pos) (- (count-lines (point-min) (point-max)) 1))
+      (goto-line 3)))
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 ;; Custom functions copied from:
