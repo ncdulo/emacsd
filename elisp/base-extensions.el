@@ -20,6 +20,12 @@
 
   :ensure t)
 
+(use-package discover-my-major
+  :bind
+  ("C-h C-m" . discover-my-major)
+  ("C-h M-m" . discover-my-mode)
+  )
+
 (use-package ediff
   :config
   (setq ediff-window-setup-function 'ediff-setup-windows-plain)
