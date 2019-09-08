@@ -22,6 +22,22 @@
 			     ("~/org/gtd/projects.org" :maxlevel . 3)
 			     ("~/org/gtd/tickler.org" :maxlevel . 2)))
 
+  (setq org-todo-keywords '((sequence "TODO(t)" "WAITING(w!/@)" "NEXT(n)" "|" "DONE(d!/@)" "CANCELED(c!/@")))
+
+  ;; Custom agenda commands
+  (setq org-agenda-custom-commands
+	'(("h" "At home" tags-todo "@home"
+	   ((org-agenda-overriding-header "Home")))
+	  ("e" "Errands" tags-todo "@errand"
+	   ((org-agenda-overriding-header "Errands")))
+	  ("m" "At the computer" tags-todo "@computer"
+	   ((org-agenda-overriding-header "Computer")))
+	  ("w" "At work" tags-todo "@work"
+	   ((org-agenda-overriding-header "Work")))
+	  ("p" "Current projects" tags-todo "project"
+	   ((org-agenda-overriding-header "Projects")))
+	  ("d" "Agenda with NEXT actions" ((agenda) (todo "NEXT")))))
+
   :bind
   ("C-c c" . org-capture)
   ("C-c l" . org-store-link)
