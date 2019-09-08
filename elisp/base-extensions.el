@@ -12,6 +12,14 @@
 ;;  :config
 ;;  (dashboard-setup-startup-hook))
 
+(use-package centaur-tabs
+  :config
+  (setq centaur-tabs-style "box"
+	centaur-tabs-set-modified-marker t)
+  (centaur-tabs-mode t)
+
+  :ensure t)
+
 (use-package ediff
   :config
   (setq ediff-window-setup-function 'ediff-setup-windows-plain)
