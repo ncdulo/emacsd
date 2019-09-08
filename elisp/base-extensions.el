@@ -155,11 +155,27 @@
               (unless (eq ibuffer-sorting-mode 'alphabetic)
                 (ibuffer-do-sort-by-alphabetic))))
 
+  ;; Use human readable Size column instead of original one
+  (define-ibuffer-column size-h
+    (:name "Size"
+           :inline t
+           :summarizer
+           (lambda (column-strings)
+             (let ((total 0))
+               (dolist (string column-strings)
+                 (setq total
+                       ;; like, ewww ...
+                       (+ (float (ajv/human-readable-file-sizes-to-bytes string))
+                          total)))
+               (ajv/bytes-to-human-readable-file-sizes total)))	 ;; :summarizer nil
+           )
+    (ajv/bytes-to-human-readable-file-sizes (buffer-size)))
+
   (setq ibuffer-formats
         '((mark modified read-only vc-status-mini " "
                 (name 18 18 :left :elide)
                 " "
-                (size-h 9 -1 :right)
+                (size-h 11 -1 :right)
                 " "
                 (mode 16 16 :left :elide)
                 " "
