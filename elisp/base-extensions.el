@@ -231,7 +231,8 @@
   ;; Set this to nil as I have had emacs freeze/crash when attempting to use it
   ;; Maybe it was just dependency issues or something related to my confif
   ;; at the time
-  (setq paradox-execute-asynchronously nil)
+  (setq paradox-execute-asynchronously nil
+        paradox-github-token t)
   ;; Paradox set as default package interface
   (paradox-enable))
 
