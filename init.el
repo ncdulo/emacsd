@@ -12,6 +12,8 @@
 (require 'base-functions)
 (require 'base-global-keys)
 
+(require 'setup-org)
+
 ;;(require 'lang-python)
 
 ;;(require 'lang-php)
