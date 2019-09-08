@@ -147,7 +147,8 @@
 (use-package smartparens
   :config
   (smartparens-strict-mode 1)
-  (add-hook 'prog-mode-hook #'smartparens-mode))
+  (add-hook 'prog-mode-hook #'smartparens-mode)
+  (add-hook 'elisp-mode #'smartparens-mode))
 
 (use-package smex)
 
