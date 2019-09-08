@@ -51,6 +51,11 @@
       x-select-enable-clipboard          t
       use-package-always-ensure          t)
 
+;; Editing defaults
+(setq-default indent-tabs-mode nil
+	      tab-width 4)
+(delete-selection-mode)
+
 ;; Bookmarks
 (setq
  ;; persistent bookmarks
