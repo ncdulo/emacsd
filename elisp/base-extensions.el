@@ -226,6 +226,15 @@
 
 (use-package page-break-lines)
 
+(use-package paradox
+  :config
+  ;; Set this to nil as I have had emacs freeze/crash when attempting to use it
+  ;; Maybe it was just dependency issues or something related to my confif
+  ;; at the time
+  (setq paradox-execute-asynchronously nil)
+  ;; Paradox set as default package interface
+  (paradox-enable))
+
 (use-package projectile
   :config
   (setq projectile-known-projects-file
