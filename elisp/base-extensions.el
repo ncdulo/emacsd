@@ -116,6 +116,31 @@
   (setq linum-format " %3d ")
   (global-linum-mode nil))
 
+(use-package highlight-numbers
+  :config
+  (add-hook 'prog-mode-hook 'highlight-numbers-mode))
+
+(use-package highlight-symbol
+  :config
+  (highlight-symbol-nav-mode)
+
+  ;; I think there is a more recommended way to add this hook.
+  ;; Research it and fix if need be.
+  (add-hook 'prog-mode-hook (lambda () (highlight-symbol-mode)))
+  (add-hook 'org-mode-hook (lambda () (highlight-symbol-modee)))
+
+  (setq highlight-symbol-idle-delay 0.2
+        highlight-symbol-on-navigation-p t)
+  (global-set-key [(control shift mouse-1)]
+                  (lambda (event)
+                    (interactive "e")
+                    (goto-char (posn-point (event-start event)))
+                    (highlight-symbol-at-point)))
+
+  :bind
+  ("M-n" . highlight-symbol-next)
+  ("M-p" . highlight-symbol-prev))
+
 (use-package ibuffer-vc
   :config
   (add-hook 'ibuffer-hook
