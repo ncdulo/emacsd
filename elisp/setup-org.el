@@ -29,28 +29,42 @@
 
   ;; Custom agenda commands
   (setq org-agenda-custom-commands
+       ;; View of only tasks with @home or @computer context
 	'(("h" "At home, on computer" ((agenda)
                                    (tags-todo "@home")
                                    (tags-todo "@computer")))
-	  ("e" "Errands, at work" ((agenda)
+      ;; View of only @errand or @work contexts
+      ("e" "Errands, at work" ((agenda)
                                (tags-todo "@errand")
                                (tags-todo "@work")))
+      ;; View of only project tasks. Maybe we can make this into a tree
+      ;; view, or otherwise separate projects. May also want to limit
+      ;; to only NEXT states. That way an entire project tree can be
+      ;; created, but only NEXT items are displayed. That will make it
+      ;; easier to pick one and dive in. Reduce stress/clutter and
+      ;; help 'get things done'!
 	  ("p" "Project view" tags-todo "project"
 	   ((org-agenda-overriding-header "Projects")))
+      ;; This overview will show a view with:
+      ;;  - Priority A
+      ;;  - Daily agenda
+      ;;  - Normal priority tasks
 	  ("o" "Overview of all tasks"
        ((tags "PRIORITY=\"A\""
               ((org-agenda-skip-function '(org-agenda-skip-entry-if 'todo 'done))
                (org-agenda-overriding-header "High priority unfinished tasks:")))
-        ;; Figure out how to limit to daily agenda. Weekly seems to be
-        ;; very cluttered. At minimum, reduce amount of information.
-        ;; Too much at once will create stress.
-        (agenda "")
-        ;; Figure out how to override header here. Want to use label
-        ;; "All tasks:" for alltodo section.
+        ;; Display agenda for today only
+        (agenda "" ((org-agenda-span 1)))
+        ;; Filter out any priority A tasks then list the remaining ones.
+        ;; Note -- this seems to skip over priority B and C as well. See if
+        ;; we can't fix that at some point. Alternatively, add more sections
+        ;; or agenda views to cover other priorities.
         (alltodo ""
                  ((org-agenda-skip-function
                    '(or (air-org-skip-subtree-if-priority ?A)
-                        (org-agenda-skip-if nil '(scheduled deadline))))))))))
+                        (org-agenda-skip-if nil '(scheduled deadline))))
+                  (org-agenda-overriding-header "All normal priority tasks:"))))
+        ((org-agenda-compact-blocks t)))))
 
   :bind
   ("C-c c" . org-capture)
