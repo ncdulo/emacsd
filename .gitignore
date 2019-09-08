@@ -1,6 +1,8 @@
 *~
 *.elc
 .custom.el
+.emacs.desktop
+.emacs.desktop.lock
 ede-projects.el
 smex-items
 elpa/
