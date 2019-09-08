@@ -110,6 +110,7 @@
       dired-recursive-copies 'always
       dired-recursive-deletes 'top
       dired-listing-switches "-lha")
+(add-hook 'dired-mode-hook 'auto-revert-mode)
 
 (provide 'base)
 ;;; base ends here
