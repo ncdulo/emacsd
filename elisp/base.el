@@ -93,5 +93,11 @@
 ;; Delete trailing whitespace before save
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
 
+;; Dired customizations
+(setq dired-dwim-target t
+      dired-recursive-copies 'always
+      dired-recursive-deletes 'top
+      dired-listing-switches "-lha")
+
 (provide 'base)
 ;;; base ends here
