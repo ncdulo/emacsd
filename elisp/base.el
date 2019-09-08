@@ -30,6 +30,7 @@
 ;; Emacs customizations
 (setq confirm-kill-emacs                  'y-or-n-p
       confirm-nonexistent-file-or-buffer  t
+      column-number-mode                  t
       save-interprogram-paste-before-kill t
       mouse-yank-at-point                 t
       require-final-newline               t
