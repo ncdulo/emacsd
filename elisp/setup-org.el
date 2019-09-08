@@ -15,6 +15,13 @@
 				("T" "Tickler" entry
 				 (file+headline "~/org/gtd/tickler.org" "Tickler")
 				 "* %i%?\n%U\n")))
+
+  ;; Refile targets
+  (setq org-refile-targets '(("~/org/gtd/tasks.org" :maxlevel . 1)
+			     ("~/org/gtd/someday.org" :maxlevel . 1)
+			     ("~/org/gtd/projects.org" :maxlevel . 3)
+			     ("~/org/gtd/tickler.org" :maxlevel . 2)))
+
   :bind
   ("C-c c" . org-capture)
   ("C-c l" . org-store-link)
