@@ -3,6 +3,10 @@
 ;; (defun something
 ;;    (do-something))
 
+
+;; Custom functions copied from:
+;; https://tuhdo.github.io/emacs-tutor3.html
+
 (defun prelude-move-beginning-of-line (arg)
   "Move point back to indentation of beginning of line.
 
@@ -176,5 +180,7 @@ Position the cursor at it's beginning, according to the current mode."
   (newline-and-indent)
   (forward-line -1)
   (indent-according-to-mode))
+  
+;; End of custom functions
 
 (provide 'base-functions)
