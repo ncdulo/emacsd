@@ -1,12 +1,20 @@
 (use-package org
   :config
+  ;; Default directories and files
   (setq org-directory "~/org"
         org-default-notes-file (concat org-directory "/notes/notes.org")
 	org-agenda-files (list (concat org-directory "/gtd/inbox.org")
 			       (concat org-directory "/gtd/projects.org")
 			       (concat org-directory "/gtd/tasks.org")
-			       (concat org-directory "/gtd/tickler.org"))
-	)
+			       (concat org-directory "/gtd/tickler.org")))
+
+  ;; Capture templates
+  (setq org-capture-templates '(("t" "Todo [inbox]" entry
+				 (file+headline "~/org/gtd/inbox.org" "Inbox")
+				 "* TODO %i%?\n%T\n")
+				("T" "Tickler" entry
+				 (file+headline "~/org/gtd/tickler.org" "Tickler")
+				 "* %i%?\n%U\n")))
   :bind
   ("C-c c" . org-capture)
   ("C-c l" . org-store-link)
