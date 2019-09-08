@@ -133,7 +133,7 @@
   ;; I think there is a more recommended way to add this hook.
   ;; Research it and fix if need be.
   (add-hook 'prog-mode-hook (lambda () (highlight-symbol-mode)))
-  (add-hook 'org-mode-hook (lambda () (highlight-symbol-modee)))
+  (add-hook 'org-mode-hook (lambda () (highlight-symbol-mode)))
 
   (setq highlight-symbol-idle-delay 0.2
         highlight-symbol-on-navigation-p t)
