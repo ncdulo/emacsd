@@ -144,7 +144,10 @@
   (setq recentf-save-file (recentf-expand-file-name "~/.emacs.d/private/cache/recentf"))
   (recentf-mode 1))
 
-(use-package smartparens)
+(use-package smartparens
+  :config
+  (smartparens-strict-mode 1)
+  (add-hook 'prog-mode-hook #'smartparens-mode))
 
 (use-package smex)
 
@@ -155,6 +158,10 @@
    undo-tree-auto-save-history nil
    undo-tree-history-directory-alist `(("." . ,(concat temp-dir "/undo/"))))
   (global-undo-tree-mode 1))
+
+(use-package volatile-highlights
+  :config
+  (volatile-highlights-mode t))
 
 (use-package which-key
   :config
