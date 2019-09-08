@@ -47,7 +47,10 @@
         (agenda "")
         ;; Figure out how to override header here. Want to use label
         ;; "All tasks:" for alltodo section.
-        (alltodo "")))))
+        (alltodo ""
+                 ((org-agenda-skip-function
+                   '(or (air-org-skip-subtree-if-priority ?A)
+                        (org-agenda-skip-if nil '(scheduled deadline))))))))))
 
   :bind
   ("C-c c" . org-capture)

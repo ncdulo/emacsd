@@ -3,6 +3,18 @@
 ;; (defun something
 ;;    (do-something))
 
+;; Org-mode skip function to filter based on priority
+;; Source: https://blog.aaronbieber.com/2016/09/24/an-agenda-for-life-with-org-mode.html
+(defun air-org-skip-subtree-if-priority (priority)
+  "Skip an agenda subtree if it has a priority of PRIORITY.
+
+PRIORITY may be one of the characters ?A, ?B, or ?C."
+  (let ((subtree-end (save-excursion (org-end-of-subtree t)))
+        (pri-value (* 1000 (- org-lowest-priority priority)))
+        (pri-current (org-get-priority (thing-at-point 'line t))))
+    (if (= pri-value pri-current)
+        subtree-end
+      nil)))
 
 ;; Custom functions copied from:
 ;; https://tuhdo.github.io/emacs-tutor3.html
@@ -180,7 +192,7 @@ Position the cursor at it's beginning, according to the current mode."
   (newline-and-indent)
   (forward-line -1)
   (indent-according-to-mode))
-  
+
 ;; End of custom functions
 
 (provide 'base-functions)
