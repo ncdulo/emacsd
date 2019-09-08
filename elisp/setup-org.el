@@ -37,7 +37,17 @@
                                (tags-todo "@work")))
 	  ("p" "Project view" tags-todo "project"
 	   ((org-agenda-overriding-header "Projects")))
-	  ("d" "Agenda with NEXT actions" ((agenda) (todo "NEXT")))))
+	  ("o" "Overview of all tasks"
+       ((tags "PRIORITY=\"A\""
+              ((org-agenda-skip-function '(org-agenda-skip-entry-if 'todo 'done))
+               (org-agenda-overriding-header "High priority unfinished tasks:")))
+        ;; Figure out how to limit to daily agenda. Weekly seems to be
+        ;; very cluttered. At minimum, reduce amount of information.
+        ;; Too much at once will create stress.
+        (agenda "")
+        ;; Figure out how to override header here. Want to use label
+        ;; "All tasks:" for alltodo section.
+        (alltodo "")))))
 
   :bind
   ("C-c c" . org-capture)
