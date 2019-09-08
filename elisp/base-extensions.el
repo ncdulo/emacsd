@@ -43,7 +43,7 @@
 
 (use-package counsel
   :bind
-  ("M-x" . counsel-M-x)
+  ;;("M-x" . counsel-M-x)
   ("C-x C-m" . counsel-M-x)
   ("C-x C-f" . counsel-find-file)
   ("C-x c k" . counsel-yank-pop))
@@ -54,6 +54,26 @@
   ("C-x c p" . counsel-projectile-ag)
   :config
   (counsel-projectile-on))
+
+(use-package ido
+  :config
+  (setq ido-enable-prefix nil
+        ido-enable-flex-matching t
+        ido-create-new-buffer 'always
+        ido-use-filename-at-point 'guess
+        ido-max-prospects 10
+        ido-default-file-method 'selected-window
+        ido-auto-merge-work-directories-length -1)
+  (ido-mode 1))
+
+(use-package ido-completing-read+
+  :config
+  (ido-ubiquitous-mode 1))
+
+(use-package flx-ido
+  :config
+  (flx-ido-mode 1)
+  (setq ido-use-faces nil))
 
 (use-package ivy
   :bind
@@ -167,7 +187,12 @@
 
 (use-package smartparens)
 
-(use-package smex)
+(use-package smex
+  :config
+  (smex-initialize)
+  :bind
+  ("M-x" . smex)
+  ("M-X" . smex-major-mode-commands))
 
 (use-package undo-tree
   :config
