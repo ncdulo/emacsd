@@ -81,6 +81,11 @@
  auto-save-list-file-name           (concat temp-dir "/autosave")
  make-backup-files                  t
  create-lockfiles                   nil
+ backup-by-copying                  t ; don't clobber symlinks
+ delete-old-versions                t
+ kept-new-versions                  4
+ kept-old-versions                  2
+ version-control                    t
  backup-directory-alist            `((".*" . ,(concat temp-dir "/backup/")))
  auto-save-file-name-transforms    `((".*" ,(concat temp-dir "/auto-save-list/") t)))
 
