@@ -102,8 +102,14 @@
 ;; Save our session on exit and auto restore on start
 (desktop-save-mode 1)
 
-;; default window size
-(when window-system (set-frame-size (selected-frame) 90 40))
+;; default size of.. initial frame
+(setq initial-frame-alist
+      '((width . 90) ; characters in a line
+        (height . 40))) ; number of lines
+;; and subsequent frames
+(setq default-frame-alist
+      '((width . 90) ; characters in a line
+        (height . 40))) ; number of lines
 
 ;; Delete trailing whitespace before save
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
