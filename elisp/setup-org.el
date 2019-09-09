@@ -28,13 +28,16 @@
   (setq org-todo-keywords '((sequence "TODO(t)" "WAITING(w!)" "NEXT(n)" "APPT(a)" "|" "DONE(d!)" "CANCELED(c!)")))
 
   ;; Custom agenda commands
+  ;; TODO: Still need to override header in some of these views.
+  ;; TODO: Projects with next actions.
+  ;; TODO: Further refine the custom views to my preference.
   (setq org-agenda-custom-commands
        ;; View of only tasks with @home or @computer context
-	'(("h" "At home, on computer" ((agenda)
+	'(("h" "At home, on computer" ((agenda "" ((org-agenda-span 1)))
                                    (tags-todo "@home")
                                    (tags-todo "@computer")))
       ;; View of only @errand or @work contexts
-      ("e" "Errands, at work" ((agenda)
+      ("e" "Errands, at work" ((agenda "" ((org-agenda-span 1)))
                                (tags-todo "@errand")
                                (tags-todo "@work")))
       ;; View of only project tasks. Maybe we can make this into a tree
