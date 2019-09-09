@@ -111,6 +111,9 @@
       '((width . 90) ; characters in a line
         (height . 40))) ; number of lines
 
+;; set our cursor type to something more familiar
+(setq-default cursor-type '(bar . 1))
+
 ;; Delete trailing whitespace before save
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
 
