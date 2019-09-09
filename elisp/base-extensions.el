@@ -69,8 +69,11 @@
         ido-use-filename-at-point 'guess
         ido-max-prospects 10
         ido-default-file-method 'selected-window
-        ido-auto-merge-work-directories-length -1)
-  (ido-mode 1))
+        ido-auto-merge-work-directories-length -1
+        ido-use-faces nil)
+  (ido-mode 1)
+
+  (ido-everywhere 1))
 
 (use-package ido-completing-read+
   :config

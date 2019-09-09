@@ -3,6 +3,7 @@
 .custom.el
 .emacs.desktop
 .emacs.desktop.lock
+ido.last
 ede-projects.el
 smex-items
 elpa/
