@@ -18,7 +18,8 @@
   "Hostname-based elisp temp directories")
 
 ;; Core settings
-(setq gc-cons-threshold 100000000)
+(setq gc-cons-threshold (* 100 1024 1024)
+      large-file-warning-threshold (* 15 1024 1024))
 ;; UTF-8 please
 (set-charset-priority 'unicode)
 (setq locale-coding-system   'utf-8)   ; pretty
