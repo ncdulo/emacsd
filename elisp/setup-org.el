@@ -57,7 +57,8 @@
               ((org-agenda-skip-function '(org-agenda-skip-entry-if 'todo 'done))
                (org-agenda-overriding-header "High priority unfinished tasks:")))
         ;; Display agenda for today only
-        (agenda "" ((org-agenda-span 1)))
+        (agenda "" ((org-agenda-span 1)
+                    (org-agenda-overriding-header "Today's Agenda")))
         ;; Filter out any priority A tasks then list the remaining ones.
         ;; Note -- this seems to skip over priority B and C as well. See if
         ;; we can't fix that at some point. Alternatively, add more sections
@@ -66,8 +67,9 @@
                  ((org-agenda-skip-function
                    '(or (air-org-skip-subtree-if-priority ?A)
                         (org-agenda-skip-if nil '(scheduled deadline))))
-                  (org-agenda-overriding-header "All normal priority tasks:"))))
-        ((org-agenda-compact-blocks t)))))
+                  (org-agenda-overriding-header "All normal priority tasks:")))))
+      ;; Dropped parens to next line for readability. New custom commands go here :)
+      ))
 
   :bind
   ("C-c c" . org-capture)
