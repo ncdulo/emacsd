@@ -87,7 +87,8 @@
   ("C-x C-r" . ivy-resume)
   :config
   (ivy-mode 1)
-  (setq ivy-use-virtual-buffers nil)
+  (setq ivy-use-virtual-buffers nil
+        ivy-count-format "(%d/%d) ")
   (define-key read-expression-map (kbd "C-r") 'counsel-expression-history))
 
 (use-package golden-ratio
@@ -248,6 +249,11 @@
 (use-package rainbow-delimiters
   :config
   (add-hook 'prog-mode-hook 'rainbow-delimiters-mode))
+
+(use-package rainbow-mode
+  :config
+  (add-hook 'prog-mode-hook 'rainbow-mode)
+  :delight)
 
 (use-package recentf
   :config
