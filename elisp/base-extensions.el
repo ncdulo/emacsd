@@ -1,4 +1,9 @@
 
+;; Reference: https://github.com/abo-abo/ace-window
+(use-package ace-window
+  :bind
+  ("M-o" . ace-window))
+
 (use-package avy
   :bind
   ("C-c SPC" . avy-goto-char))
