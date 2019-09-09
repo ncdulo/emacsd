@@ -265,6 +265,7 @@
 
 (use-package smex
   :config
+  (setq smex-history-length 25)
   (smex-initialize)
   :bind
   ("M-x" . smex)
