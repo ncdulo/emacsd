@@ -28,7 +28,7 @@ My personal .emacs.d setup. This repository is intended to backup my emacs.d con
   * Optimize smartparens setup
     * Might want to enable strict mode
     * I don't like the default C-Right/Left slurp/barf keybinds
-  * Determine how to add the colored paren grouping
+  * ~~Determine how to add the colored paren grouping~~
 
 ## Project Goals
 * Learn ELisp
