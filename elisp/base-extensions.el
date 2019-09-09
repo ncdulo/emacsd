@@ -112,7 +112,7 @@
                                      "dired-mode"))
   (golden-ratio-mode)
 
-  :ensure t)
+  :delight (auto-fill-function " GR"))
 
 (use-package hlinum
   :config
@@ -248,7 +248,8 @@
 
 (use-package rainbow-delimiters
   :config
-  (add-hook 'prog-mode-hook 'rainbow-delimiters-mode))
+  (add-hook 'prog-mode-hook 'rainbow-delimiters-mode)
+  :delight)
 
 (use-package rainbow-mode
   :config
