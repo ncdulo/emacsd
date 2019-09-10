@@ -91,7 +91,8 @@
 
 (use-package ivy
   :bind
-  ("C-x s" . swiper)
+  ("C-s" . swiper)
+  ("C-r" . swiper)
   ("C-x C-r" . ivy-resume)
   :config
   (ivy-mode 1)
