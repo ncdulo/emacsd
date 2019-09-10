@@ -267,7 +267,9 @@
 
 (use-package recentf
   :config
-  (setq recentf-save-file (recentf-expand-file-name "~/.emacs.d/private/cache/recentf"))
+  (setq recentf-save-file (recentf-expand-file-name "~/.emacs.d/private/cache/recentf")
+        recentf-max-saved-items 100
+        recentf-exclude '("/tmp/" "/ssh:"))
   (recentf-mode 1))
 
 (use-package smartparens)
