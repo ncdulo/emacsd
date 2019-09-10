@@ -36,6 +36,8 @@
       save-interprogram-paste-before-kill t
       mouse-yank-at-point                 t
       require-final-newline               t
+      sentence-end-double-space           nil ; sentences end in a single space
+      savehist-file                       (concat temp-dir "/history")
       visible-bell                        nil
       ring-bell-function                  'ignore
       custom-file                         "~/.emacs.d/.custom.el"
@@ -53,6 +55,9 @@
       fringes-outside-margins            t
       x-select-enable-clipboard          t
       use-package-always-ensure          t)
+
+;; Enable persistent history for minibuffer
+(savehist-mode)
 
 ;; Editing defaults
 (setq-default indent-tabs-mode nil
