@@ -110,6 +110,10 @@
 
 (show-paren-mode 1)
 
+;; Enable fringe markings for buffer start, end and empty lines
+(setq-default indicate-buffer-boundaries 'left
+              indicate-empty-lines +1)
+
 ;; Save our session on exit and auto restore on start
 (desktop-save-mode 1)
 
