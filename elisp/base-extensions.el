@@ -279,6 +279,15 @@
         recentf-exclude '("/tmp/" "/ssh:"))
   (recentf-mode 1))
 
+(use-package smart-mode-line
+  :config
+  (setq sml/name-width 36
+        sml/mode-width 'full
+        sml/shorten-directory t
+        sml/shorten-modes t)
+  ;; If we need to set a theme, do it *before* the following line
+  (sml/setup))
+
 (use-package smartparens)
 
 (use-package smex
