@@ -1,4 +1,11 @@
 
+;; This should allow paradox to play with packages in the background
+(use-package async
+  :commands (async-start))
+
+(use-package restart-emacs
+  :bind* (("C-x M-c" . restart-emacs)))
+
 ;; Reference: https://github.com/abo-abo/ace-window
 (use-package ace-window
   :bind
