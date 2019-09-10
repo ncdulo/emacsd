@@ -107,6 +107,10 @@
         ivy-count-format "(%d/%d) ")
   (define-key read-expression-map (kbd "C-r") 'counsel-expression-history))
 
+(use-package git-gutter-fringe
+  :config
+  (global-git-gutter-mode +1))
+
 (use-package golden-ratio
   :config
   (setq golden-ratio-exclude-modes '("ediff-mode"
