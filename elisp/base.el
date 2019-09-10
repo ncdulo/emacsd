@@ -101,6 +101,13 @@
 (fset 'yes-or-no-p 'y-or-n-p)
 (global-auto-revert-mode t)
 
+;; Smoother scrolling options
+(setq scroll-margin 1
+      scroll-step 1
+      scroll-conservatively 100
+      scroll-preserve-screen-position 1
+      mouse-wheel-scroll-amount '(1 ((shift) . 1)))
+
 ;; Disable toolbar & enable menubar
 (menu-bar-mode 1)
 (when (fboundp 'tool-bar-mode)
