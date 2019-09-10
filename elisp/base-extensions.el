@@ -260,7 +260,7 @@
 
   (setq projectile-completion-system 'ivy)
 
-  (projectile-global-mode))
+  (projectile-mode))
 
 (use-package rainbow-delimiters
   :config
