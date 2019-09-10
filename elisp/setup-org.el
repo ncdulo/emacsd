@@ -1,4 +1,6 @@
 (use-package org
+  :bind
+  ("C-c b" . org-switchb)
   :config
   ;; Enable autofill mode
   (add-hook 'org-mode-hook 'turn-on-auto-fill)
@@ -17,7 +19,10 @@
 				 "* TODO %i%?\n%T\n")
 				("T" "Tickler" entry
 				 (file+headline "~/org/gtd/tickler.org" "Tickler")
-				 "* %i%?\n%U\n")))
+				 "* %i%?\n%U\n")
+                ("j" "Journal" entry
+                 (file+datetree "~/org/journal.org")
+                 "* %?\nEntered on %U\n %i\n %a")))
 
   ;; Refile targets
   (setq org-refile-targets '(("~/org/gtd/tasks.org" :maxlevel . 1)
