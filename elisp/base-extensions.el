@@ -56,8 +56,8 @@
   :bind
   ("C-=" . er/expand-region))
 
-(use-package flycheck)
-
+(use-package flycheck
+  :init (global-flycheck-mode))
 
 (use-package counsel
   :bind
