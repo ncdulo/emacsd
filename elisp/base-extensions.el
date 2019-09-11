@@ -33,6 +33,10 @@
 
   :ensure t)
 
+;; Provide better line/region commenting
+(use-package comment-dwim-2
+  :bind ("M-;" . comment-dwim-2))
+
 (use-package discover-my-major
   :bind
   ("C-h C-m" . discover-my-major)
