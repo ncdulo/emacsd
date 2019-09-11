@@ -287,6 +287,8 @@
   ;; Try to find a different keybind.
   ;; C-t is normally bound to transpose character, which I
   ;; think could be useful
+  ;; Fix this: shell-pop does not toggle with keybind. It will
+  ;; open but not close.
   :bind (("C-t" . shell-pop))
   :config
   (setq shell-pop-shell-type '("ansi-term" "*ansi-term*"
