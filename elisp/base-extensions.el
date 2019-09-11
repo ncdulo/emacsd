@@ -292,7 +292,12 @@
   ;; If we need to set a theme, do it *before* the following line
   (sml/setup))
 
-(use-package smartparens)
+(use-package smartparens
+  :config
+  (require 'smartparens-config)
+  (sp-local-pair 'emacs-lisp-mode "'" nil :actions nil)
+  (setq sp-base-key-bindings 'paredit)
+  (add-hook 'prog-mode-hook #'smartparens-strict-mode))
 
 (use-package smex
   :config
