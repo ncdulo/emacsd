@@ -17,6 +17,7 @@
 
 
 (use-package company
+  :diminish " Cmpny"
   :config
   (add-hook 'after-init-hook 'global-company-mode))
 
@@ -108,10 +109,14 @@
   (define-key read-expression-map (kbd "C-r") 'counsel-expression-history))
 
 (use-package git-gutter-fringe
+  :diminish " GitG"
   :config
   (global-git-gutter-mode +1))
 
+(use-package diminish)
+
 (use-package golden-ratio
+  :diminish " GR"
   :config
   (setq golden-ratio-exclude-modes '("ediff-mode"
 				     "dired-mode"
@@ -130,9 +135,7 @@
                                      "IELM"
                                      "eshell-mode"
                                      "dired-mode"))
-  (golden-ratio-mode)
-
-  :delight (auto-fill-function " GR"))
+  (golden-ratio-mode))
 
 (use-package hlinum
   :config
@@ -272,6 +275,7 @@
   :delight)
 
 (use-package rainbow-mode
+  :diminish " Rb"
   :config
   (add-hook 'prog-mode-hook 'rainbow-mode)
   :delight)
@@ -324,6 +328,7 @@
   ("M-X" . smex-major-mode-commands))
 
 (use-package undo-tree
+  :diminish " UT"
   :config
   ;; Remember undo history
   (setq
