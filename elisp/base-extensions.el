@@ -283,6 +283,20 @@
         recentf-exclude '("/tmp/" "/ssh:"))
   (recentf-mode 1))
 
+(use-package shell-pop
+  ;; Try to find a different keybind.
+  ;; C-t is normally bound to transpose character, which I
+  ;; think could be useful
+  :bind (("C-t" . shell-pop))
+  :config
+  (setq shell-pop-shell-type '("ansi-term" "*ansi-term*"
+                               (lambda nil (ansi-term shell-pop-term-shell))))
+  ;; I would prefer ZSH but something is wonky with the way it echo's text back to us.
+  ;; Prompt is fine, output is corrupt or misread. Maybe encoding problem? Fix this.
+  (setq shell-pop-term-shell "/bin/bash")
+  ;; need to do this manually or not picked up by shell-pop
+  (shell-pop--set-shell-type 'shell-pop-shell-type shell-pop-shell-type))
+
 (use-package smart-mode-line
   :config
   (setq sml/name-width 36
