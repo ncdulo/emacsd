@@ -107,8 +107,9 @@
       scroll-preserve-screen-position 1
       mouse-wheel-scroll-amount '(1 ((shift) . 1)))
 
-;; Disable toolbar & enable menubar
-(menu-bar-mode 1)
+;; Disable toolbar & menubar
+;; "C-<mouse3>" for menu :)
+(menu-bar-mode -1)
 (when (fboundp 'tool-bar-mode)
   (tool-bar-mode -1))
 (when (  fboundp 'scroll-bar-mode)
