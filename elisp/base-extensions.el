@@ -349,6 +349,13 @@
 
 (use-package wgrep)
 
+(use-package writegood-mode
+  ;;:diminish writegood-mode
+  :config
+  (add-hook 'text-mode-hook 'writegood-mode)
+  ;; (add-hook 'org-mode-hook 'writegood-mode)
+  )
+
 (use-package yasnippet
   :config
   (yas-global-mode 1))
