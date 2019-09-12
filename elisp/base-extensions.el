@@ -123,7 +123,7 @@
   :diminish " GR"
   :config
   (setq golden-ratio-exclude-modes '("ediff-mode"
-				     "dired-mode"
+				                     "dired-mode"
                                      "gud-mode"
                                      "gdb-locals-mode"
                                      "gdb-registers-mode"
