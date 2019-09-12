@@ -5,6 +5,12 @@
   ;; Enable autofill mode
   (add-hook 'org-mode-hook 'turn-on-auto-fill)
 
+  (setq org-startup-indented t
+        org-hide-leading-stars t
+        org-src-fontify-natively t
+        org-src-tab-acts-natively t
+        org-deadline-warning-days 7)
+
   ;; Default directories and files
   (setq org-directory "~/org"
         org-default-notes-file (concat org-directory "/notes/notes.org")
