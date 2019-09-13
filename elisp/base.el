@@ -10,6 +10,17 @@
   (package-install 'use-package))
 (require 'use-package)
 
+(use-package auto-compile
+  :config
+  (auto-compile-on-load-mode)
+  (auto-compile-on-save-mode)
+
+  ;; If compile log gets bothersome..
+  ;; fix the errors, or uncomment..
+  ;;(setq auto-compile-display-buffer nil)
+  ;;(setq auto-compile-mode-line-counter t)
+  )
+
 (setq user-full-name "Nick Cardullo"
       user-mail-address "nick.cardullo@gmail.com")
 
