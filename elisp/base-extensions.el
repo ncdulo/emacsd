@@ -71,11 +71,13 @@
   ("C-x C-f" . counsel-find-file)
   ("C-x c k" . counsel-yank-pop))
 
+;; Reference: https://github.com/ericdanan/counsel-projectile
 (use-package counsel-projectile
   :bind
   ("C-x v" . counsel-projectile)
   ("C-x c p" . counsel-projectile-ag)
   :config
+  (define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map)
   (counsel-projectile-mode))
 
 (use-package ido
