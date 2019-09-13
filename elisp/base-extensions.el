@@ -76,7 +76,7 @@
   ("C-x v" . counsel-projectile)
   ("C-x c p" . counsel-projectile-ag)
   :config
-  (counsel-projectile-on))
+  (counsel-projectile-mode))
 
 (use-package ido
   :config
