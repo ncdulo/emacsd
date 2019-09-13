@@ -27,7 +27,7 @@
 
 (defconst private-dir  (expand-file-name "private" user-emacs-directory))
 (defconst temp-dir (format "%s/cache" private-dir)
-  "Hostname-based elisp temp directories")
+  "Hostname-based elisp temp directories.")
 
 ;; Core settings
 (setq gc-cons-threshold (* 100 1024 1024)
