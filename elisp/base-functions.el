@@ -3,6 +3,19 @@
 ;; (defun something
 ;;    (do-something))
 
+;; Close compilation buffer automatically after a successful compile
+;; Source: https://sriramkswamy.github.io/dotemacs/
+(setq compilation-finish-function
+      (lambda (buf stf)
+        (if (null (string-match ".*exited abnormally.*" str))
+            ;; No errors, make the compilation window go away in a few seconds
+            (progn
+              (run-at-time "0.4 sec" nil
+                           (lambda ()
+                             (select-window (get-buffer-window (get-buffer-create "*compilation*")))
+                             (switch-to-buffer nil)))
+              (message "No compilation errors!")))))
+
 ;; Org-mode skip function to filter based on priority
 ;; Source: https://blog.aaronbieber.com/2016/09/24/an-agenda-for-life-with-org-mode.html
 (defun air-org-skip-subtree-if-priority (priority)
