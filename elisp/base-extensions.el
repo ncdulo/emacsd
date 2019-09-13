@@ -19,6 +19,17 @@
 (use-package company
   :diminish " Cmpny"
   :config
+  (setq company-minimum-prefix-length 2
+        company-require-match 0
+        company-selection-wrap-around t
+        company-show-numbers t
+        company-dabbrev-downcase nil
+        company-tooltip-limit 10
+        company-tooltip-align-annotations 't
+        company-idle-delay 0.4
+        company-begin-commands '(self-insert-command))
+  (add-to-list 'company-backends '(company-files
+                                   company-capf))
   (add-hook 'after-init-hook 'global-company-mode))
 
 ;;(use-package dashboard
