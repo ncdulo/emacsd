@@ -10,6 +10,7 @@
   (package-install 'use-package))
 (require 'use-package)
 
+;; Reference: https://github.com/emacscollective/auto-compile
 (use-package auto-compile
   :config
   (auto-compile-on-load-mode)
@@ -17,8 +18,8 @@
 
   ;; If compile log gets bothersome..
   ;; fix the errors, or uncomment..
-  ;;(setq auto-compile-display-buffer nil)
-  ;;(setq auto-compile-mode-line-counter t)
+  (setq auto-compile-display-buffer nil)
+  (setq auto-compile-mode-line-counter t)
   )
 
 (setq user-full-name "Nick Cardullo"
@@ -64,7 +65,7 @@
       indent-tabs-mode                   nil
       inhibit-startup-message            t
       fringes-outside-margins            t
-      x-select-enable-clipboard          t
+      select-enable-clipboard          t
       use-package-always-ensure          t)
 
 ;; Enable persistent history for minibuffer
