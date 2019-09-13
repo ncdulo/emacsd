@@ -36,7 +36,7 @@
 			     ("~/org/gtd/projects.org" :maxlevel . 3)
 			     ("~/org/gtd/tickler.org" :maxlevel . 2)))
 
-  (setq org-todo-keywords '((sequence "TODO(t)" "WAITING(w!)" "NEXT(n)" "APPT(a)" "|" "DONE(d!)" "CANCELED(c!)")))
+  (setq org-todo-keywords '((sequence "TODO(t)" "NEXT(n)" "APPT(a)"  "WAITING(w!)""|" "DONE(d!)" "CANCELED(c!)")))
 
   ;; Custom agenda commands
   ;; TODO: Still need to override header in some of these views.
