@@ -372,12 +372,13 @@
 ;; Might want to hotkey this.
 ;; Or default to opening in a new frame. Wrapper function probably.
 ;; Or figure out how to default to a certain city. (through hotkey?)
+;; Reference: https://wttr.in/:help
 (use-package wttrin
   :commands (wttrin)
   :config
-  (setq wttrin-default-cities '("Ft Lauderdale"
-                                "Miami"
-                                "Hollywood, FL")))
+  (setq wttrin-default-cities '("33328?F"
+                                "Hollywood, FL?F"
+                                "Dallas, TX?F")))
 
 (use-package yasnippet
   :config
