@@ -8,5 +8,6 @@ ede-projects.el
 smex-items
 elpa/
 private/
+semanticdb/
 snippets/
 transient/
