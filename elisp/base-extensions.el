@@ -369,6 +369,16 @@
   ;; (add-hook 'org-mode-hook 'writegood-mode)
   )
 
+;; Might want to hotkey this.
+;; Or default to opening in a new frame. Wrapper function probably.
+;; Or figure out how to default to a certain city. (through hotkey?)
+(use-package wttrin
+  :commands (wttrin)
+  :config
+  (setq wttrin-default-cities '("Ft Lauderdale"
+                                "Miami"
+                                "Hollywood, FL")))
+
 (use-package yasnippet
   :config
   (yas-global-mode 1))
