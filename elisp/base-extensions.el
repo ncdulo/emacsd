@@ -281,6 +281,14 @@
   (setq projectile-known-projects-file
         (expand-file-name "projectile-bookmarks.eld" temp-dir))
 
+  ;; Set a custom mode-line display here as I'm not sure the
+  ;; diminish style syntax for this one.
+  (setq projectile-mode-line-function
+        (lambda () (if (and (ignore-errors (projectile-project-p))
+                            (not (file-remote-p default-directory)))
+                       (format " [%s]" (projectile-project-name))
+                     "")))
+
   (setq projectile-completion-system 'ivy)
 
   (projectile-mode))
