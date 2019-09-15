@@ -28,8 +28,13 @@
         company-tooltip-align-annotations 't
         company-idle-delay 0.4
         company-begin-commands '(self-insert-command))
-  (add-to-list 'company-backends '(company-files
-                                   company-capf))
+  (add-to-list 'company-backends '(company-elisp
+                                   company-files
+                                   company-capf
+                                   company-cmake
+                                   company-nxml
+                                   company-ispell
+                                   company-keywords))
   (add-hook 'after-init-hook 'global-company-mode))
 
 ;;(use-package dashboard
