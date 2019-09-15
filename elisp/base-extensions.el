@@ -20,7 +20,7 @@
   :diminish " Cmpny"
   :config
   (setq company-minimum-prefix-length 2
-        company-require-match 0
+        company-require-match nil
         company-selection-wrap-around t
         company-show-numbers t
         company-dabbrev-downcase nil
@@ -29,12 +29,14 @@
         company-idle-delay 0.4
         company-begin-commands '(self-insert-command))
   (add-to-list 'company-backends '(company-elisp
-                                   company-files
-                                   company-capf
+                                   company-css
                                    company-cmake
                                    company-nxml
-                                   company-ispell
-                                   company-keywords))
+                                   company-capf
+                                   company-files
+                                   company-keywords
+                                   company-dabbrev-code
+                                   company-dabbrev))
   (add-hook 'after-init-hook 'global-company-mode))
 
 ;;(use-package dashboard
