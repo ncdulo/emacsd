@@ -11,6 +11,10 @@
   :bind
   ("M-o" . ace-window))
 
+(use-package aggressive-indent
+  :config
+  (add-hook 'prog-mode-hook #'aggressive-indent-mode))
+
 (use-package avy
   :bind
   ("C-c SPC" . avy-goto-char))
