@@ -133,14 +133,14 @@
   (define-key read-expression-map (kbd "C-r") 'counsel-expression-history))
 
 (use-package git-gutter-fringe
-  :diminish " GitG"
+  :diminish
   :config
   (global-git-gutter-mode +1))
 
 (use-package diminish)
 
 (use-package golden-ratio
-  :diminish " GR"
+  :diminish
   :config
   (setq golden-ratio-exclude-modes '("ediff-mode"
 				                     "dired-mode"
@@ -175,6 +175,7 @@
   (add-hook 'prog-mode-hook 'highlight-numbers-mode))
 
 (use-package highlight-symbol
+  :diminish
   :config
   (highlight-symbol-nav-mode)
 
@@ -398,7 +399,7 @@
   ("M-X" . smex-major-mode-commands))
 
 (use-package undo-tree
-  :diminish " UT"
+  :diminish
   :config
   ;; Remember undo history
   (setq
@@ -407,10 +408,12 @@
   (global-undo-tree-mode 1))
 
 (use-package volatile-highlights
+  :diminish
   :config
   (volatile-highlights-mode t))
 
 (use-package which-key
+  :diminish
   :config
   (which-key-mode))
 
