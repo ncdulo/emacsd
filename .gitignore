@@ -5,6 +5,7 @@
 .emacs.desktop.lock
 ido.last
 ede-projects.el
+projectile-bookmarks.eld
 smex-items
 elpa/
 private/
