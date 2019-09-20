@@ -3,6 +3,7 @@
 .custom.el
 .emacs.desktop
 .emacs.desktop.lock
+.mc-lists.el
 ido.last
 ede-projects.el
 projectile-bookmarks.eld
