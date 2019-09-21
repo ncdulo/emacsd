@@ -10,17 +10,20 @@
   (package-install 'use-package))
 (require 'use-package)
 
+;; Disabling as I do not think I saw much difference in speed.
+;; Also testing to see if this was the cause of the 'lisp-nesting'
+;; error I have been encountering.
 ;; Reference: https://github.com/emacscollective/auto-compile
-(use-package auto-compile
-  :config
-  (auto-compile-on-load-mode)
-  (auto-compile-on-save-mode)
+;; (use-package auto-compile
+;;   :config
+;;   (auto-compile-on-load-mode)
+;;   (auto-compile-on-save-mode)
 
-  ;; If compile log gets bothersome..
-  ;; fix the errors, or uncomment..
-  (setq auto-compile-display-buffer nil)
-  (setq auto-compile-mode-line-counter t)
-  )
+;;   ;; If compile log gets bothersome..
+;;   ;; fix the errors, or uncomment..
+;;   (setq auto-compile-display-buffer nil)
+;;   (setq auto-compile-mode-line-counter t)
+;;   )
 
 (setq user-full-name "Nick Cardullo"
       user-mail-address "nick.cardullo@gmail.com")
@@ -65,7 +68,7 @@
       indent-tabs-mode                   nil
       inhibit-startup-message            t
       fringes-outside-margins            t
-      select-enable-clipboard          t
+      select-enable-clipboard            t
       use-package-always-ensure          t)
 
 ;; Enable persistent history for minibuffer
