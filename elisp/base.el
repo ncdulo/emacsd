@@ -113,7 +113,7 @@
 		       (make-directory (concat temp-dir "/auto-save-list") :parents))
 
 (fset 'yes-or-no-p 'y-or-n-p)
-(global-auto-revert-mode t)
+;;(global-auto-revert-mode t)
 
 ;; Smoother scrolling options
 (setq scroll-margin 1
@@ -129,6 +129,9 @@
   (tool-bar-mode -1))
 (when (  fboundp 'scroll-bar-mode)
   (scroll-bar-mode -1))
+
+;; Highlight the line containing the point, globally
+(global-hl-line-mode)
 
 (show-paren-mode 1)
 
@@ -162,7 +165,7 @@
       dired-recursive-copies 'always
       dired-recursive-deletes 'top
       dired-listing-switches "-lha")
-(add-hook 'dired-mode-hook 'auto-revert-mode)
+;;(add-hook 'dired-mode-hook 'auto-revert-mode)
 
 (provide 'base)
 ;;; base ends here
